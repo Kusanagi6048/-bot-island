@@ -1,0 +1,6 @@
+# Keep media as real Git blobs: no Git LFS, no line-ending conversion.
+*.glb binary
+*.png binary
+*.webp binary
+*.jpg binary
+*.jpeg binary
