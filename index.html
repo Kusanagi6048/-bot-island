@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-Hant-TW"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="廣荃 bot 森林小屋"><meta name="application-name" content="廣荃 bot 森林小屋">
+<meta name="theme-color" content="#1d2f22"><meta name="format-detection" content="telephone=no">
+<link rel="apple-touch-icon" href="icon-180.png"><link rel="icon" type="image/png" href="icon-180.png"><link rel="manifest" href="manifest.webmanifest">
+<title>廣荃 bot 森林小屋</title>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;overscroll-behavior:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;background:#1d2f22;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif}
+#app{position:fixed;inset:0;touch-action:none}button,select,.bot,.lab{touch-action:manipulation}
+#hud{position:fixed;left:calc(14px + env(safe-area-inset-left));top:calc(14px + env(safe-area-inset-top));width:268px;max-height:calc(100% - 28px - env(safe-area-inset-top) - env(safe-area-inset-bottom));-webkit-overflow-scrolling:touch;overflow:auto;background:rgba(255,250,236,.92);border-radius:20px;padding:12px 12px 8px;box-shadow:0 6px 24px rgba(60,80,40,.25);border:3px solid #fff}
+#hud h1{margin:0 0 2px;font-size:17px;color:#5a4128;display:flex;justify-content:space-between;align-items:center}#hud h1{gap:10px;white-space:nowrap}#fold{flex:none;padding:0 12px;font-size:16px;line-height:28px;min-width:40px}#hud.folded #bots,#hud.folded .btns{display:none}#hud.folded{width:auto}
+#clock{font-size:13px;color:#7a6345;margin-bottom:8px}
+.bot{border-left:6px solid var(--c);background:#fff;border-radius:12px;padding:7px 9px;margin-bottom:7px;cursor:pointer;transition:transform .15s}
+@media (hover:hover){.bot:hover{transform:translateX(3px)}}.bot:active{transform:scale(.98)}.bot.on{outline:3px solid var(--c)}
+.nm{font-weight:700;color:var(--c);font-size:15px}.st{font-size:13px;color:#333;margin:2px 0}.sc,.ld{font-size:11px;color:#8a7a66}
+.btns{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+button,select{font:inherit;font-size:13px;border:0;border-radius:999px;padding:6px 12px;background:#8cc65a;color:#fff;font-weight:700;cursor:pointer;box-shadow:0 2px 0 #5f9a35}
+select{background:#fff;color:#5a4128;box-shadow:0 2px 0 #d9c9a3}
+button.on{background:#e46b1f;box-shadow:0 2px 0 #a84b12}
+#labels{position:fixed;inset:0;pointer-events:none}
+.lab{position:absolute;left:0;top:0;pointer-events:auto;cursor:pointer;background:#fff;color:var(--c);border:2px solid var(--c);border-radius:999px;padding:2px 9px;font-size:13px;font-weight:700;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+#loading{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);background:#fff8e6;padding:14px 22px;border-radius:16px;color:#5a4128;font-weight:700}
+#tip{position:fixed;right:calc(12px + env(safe-area-inset-right));bottom:calc(10px + env(safe-area-inset-bottom));font-size:12px;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+html.touch button,html.touch select{padding:9px 15px;font-size:15px}html.touch .lab{padding:5px 12px;font-size:14px}
+html.touch .bot{padding:9px 11px}
+@media (max-width:640px){#hud{width:auto;right:14px;max-height:42%}}
+@media (orientation:portrait) and (max-width:1100px){#hud:not(.folded){width:auto;right:calc(14px + env(safe-area-inset-right));max-height:46%}#hud:not(.folded) #bots{display:grid;grid-template-columns:1fr 1fr;gap:0 7px}}
+</style></head><body>
+<div id="app"></div><div id="labels"></div>
+<div id="hud"><h1>🌲 廣荃 bot 森林小屋 <button id="fold" title="收合面板">－</button></h1><div id="clock">台北時間</div><div id="bots"></div>
+<div class="btns"><button id="all">全景</button><button id="demo">動作示範</button>
+<select id="time" title="預覽不同時段"><option value="now">現在時間</option><option value="2 07:30">預覽 平日 07:30</option><option value="2 08:05">預覽 平日 08:05</option><option value="2 12:00">預覽 平日 12:00</option><option value="2 15:45">預覽 平日 15:45</option><option value="2 20:15">預覽 20:15</option><option value="2 23:45">預覽 深夜 23:45</option></select></div></div>
+<div id="loading">載入角色中…</div>
+<div id="tip">拖曳旋轉・滾輪縮放・點名字跟拍</div>
+
+<script src="app.js"></script>
+</body></html>
